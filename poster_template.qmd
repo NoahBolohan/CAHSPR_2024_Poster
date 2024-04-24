@@ -1,0 +1,105 @@
+---
+title: Creating an open-source tool to model opioid overdoses and deaths
+format:
+  poster-typst: 
+    size: "35x24"
+    poster-authors: Noah Bolohan (1), Deirdre Hennessy (1), Hawre Jalal (2)
+    departments: (1) Statistics Canada, (2) University of Ottawa
+    institution-logo: "./static/sclogo.svg"
+    footer-text: "CAHSPR 2024"
+    footer-url: "https://cahspr.ca/events/cahspr-2024/"
+    footer-emails: "noah.bolohan@statcan.gc.ca"
+    footer-color: "ebcfb2"
+    keywords: [""]
+---
+
+# Background
+
+Canada has seen an increasing number of opioid-related harms and deaths, with an estimated 39,435 opioid-related hospitalizations and 40,462 apparent opioid toxicity deaths between January 2016 and June 2023[^1]. The objective of this project is to develop an open-source modelling tool aimed to provide insight into the opioid epidemic at multiple levels of health administration across Canada. In particular, the model will be directed towards analyzing the impact of policies and intervantions at sub-provincial geographic units.
+
+[^1]: Public Health Agency of Canada: [Opioid- and Stimulant-related Harms in Canada](https://health-infobase.canada.ca/substance-related-harms/opioid-stimulants/)
+
+# Methods
+
+We are developing a compartmental agent-based risk model which will leverage detailed socio-demographic and other data to simulate the frequency and locations of opioid use as well as fatality of overdoses. The model focuses on stimulating counterfactual scenarios by allowing a number of policies and interventions to be applied to the simulated population and assessing their impact. A key feature of the model is the capability to produce outputs at a health region or public health unit level, enabling region-specific analysis for local health authorities.
+
+# The Model
+
+A synthetic population is generated using the socio-demographic profile of the specific geographic region. The model includes two compartmental layers for its agents, as well as a set of events that may occur.
+
+## Opioid Use State
+
+These states describe the way in which a model agents uses opioids.
+```{mermaid}
+flowchart TD
+    NoUse([No Use])
+    IllicitUse([Illicit Use])
+    MixedUse([Mixed Use])
+    PrescriptionUse([Prescription Use])
+    OAT([Opioid Agonist Therapy])
+
+    NoUse <--> PrescriptionUse
+    NoUse <--> IllicitUse
+    PrescriptionUse <--> IllicitUse
+    IllicitUse <--> MixedUse
+    PrescriptionUse <--> MixedUse
+    NoUse <--> MixedUse
+    IllicitUse <--> OAT
+    MixedUse <--> OAT
+    OAT --> NoUse
+    OAT --> PrescriptionUse
+```
+
+## Opioid Use Locations
+
+These states include the location in which the agent is currently using opioids.
+
++ Housing status
++ Hospital
++ Prison
++ Safe site
++ Other
+
+
+## Events
+
+The flow of agents through the opioid use states and locations, as well as outcomes of opioid use, may be impacted by time-based events. These events can apply to a specific individual or the population as a whole.
+
++ Supply contamination
++ Injuries
++ Social assitance cheques
++ Overdoses
++ Compartment changes
+
+# What-If Decision Making
+
+A key feature of a modeling approach is the ability to study counter-factual ("what-if") scenarios via variable opioid interventions:
+
++ What if we increased the availability of take-home naloxone kits in our community?
++ Do supervised safe consumption sites reduce the burden of opioid-related harms?
+
+Our model can be adapted to include a number of policies or interventions related to opioid use and outcomes, for example:
+
+:::{.callout-note title="Take-home naloxone kit availability"}
+
+Determines the number of naloxone kits available to take home at each moment in time. The probability of a model agent receiving a kit in the event of an opioid overdose depends on the total number of agents as well as the number of remaining available kits. If a naloxone kit is available, the fatality rate of an overdose may be altered.
+:::
+
+:::{.callout-note title="Opioid prescription alteration""}
+
+Affects the rate at which opioid prescriptions are administered
+:::
+
+:::{.callout-note title="OAT prescription alteration"}
+
+Affects the rate at which Opioid Agonist Therapy (OAT) is prescribed.
+:::
+
+:::{.callout-note title="Point-of-contact interventions"}
+
+This intervention represents a broad class of interventions which may occur when an opioid-using actor comes into contact with some form of system. For example, visits to the hospital, emergency room/department, prison, or supervised safe consumption sites.
+:::
+
+# Conclusion
+
+With the help of collaborations with local health authorities and subject matter experts, we have begun development of a tool that can support policy makers and researches intersted in investigating opioid-related harms, while simultaneously being openly available and easy to use. A focus on sub-provincial geographies and model adaptability will further ensure that the model remains useful in a variety of scenarios.

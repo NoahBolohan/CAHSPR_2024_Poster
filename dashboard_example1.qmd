@@ -1,0 +1,93 @@
+---
+title: "Creating an open-source tool to model opioid overdoses and deaths"
+author: Noah Bolohan, Deirdre Hennessy, Hawre Jalal
+# format: 
+#   dashboard:
+#     orientation: columns
+#     width: 4986
+#     height: 4986
+format:
+  poster-typst: 
+    size: "36x24"
+    poster-authors: "A. Smith, B. Jones, C. Brown, D. Miller"
+    departments: "Department of Computer Science"
+    institution-logo: "./images/ncstate.png"
+    footer-text: "posit::conf 2023"
+    footer-url: "https://posit.co/conference/"
+    footer-emails: "abc@example.com"
+    footer-color: "ebcfb2"
+    keywords: ["Typesetting", "Typst", "Quarto"]
+---
+    
+## Column {width=25%}
+
+### Row {height=40%}
+**Background**
+
++ Opioid toxicity deaths increased 72% between 2019 and 2020
++ Total deaths from opioid toxicity over 30,00 between January 2016 and September 2022
++ Government of Canada tackling this crisis across a range of fronts, including modeling for policy planning
+
+### Row {height=50%}
+**Methods**
+
+I am developping an open-source modeling tool to help lower-level geographies with opioid policy planning.
+
++ Indivudal-based compartmental model
++ Emphasis on geographic and demographic granularity
++ Adaptible to local populations
++ Freely accessible / open-source (programmed in Python)
+
+
+## Column {width=50%}
+
+### Row {height=50%}
+
+```{mermaid}
+---
+title: Opioid Use Compartments
+---
+flowchart TD
+    NoUse([No Use])
+    IllicitUse([Illicit Use])
+    MixedUse([Mixed Use])
+    PrescriptionUse([Prescription Use])
+    OAT([Opioid Agonist Therapy])
+
+    NoUse <--> PrescriptionUse
+    NoUse <--> IllicitUse
+    PrescriptionUse <--> IllicitUse
+    IllicitUse <--> MixedUse
+    PrescriptionUse <--> MixedUse
+    NoUse <--> MixedUse
+    IllicitUse <--> OAT
+    MixedUse <--> OAT
+    OAT --> NoUse
+    OAT --> PrescriptionUse
+```
+### Row {height=50%}
+
+#### Column {width=50%}
+
+Locations
+
++ Housing status
++ Hospital
++ Prison
++ Safe site
++ Other
+
+#### Column {width=50%}
+
+Events
+
++ Supply contamination
++ Injuries
++ Social assitance cheques
++ Overdoses
++ Compartment changes
+
+## Column {width=25%}
+
+### Row {height=100%}
+print("Test")
