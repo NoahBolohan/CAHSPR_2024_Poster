@@ -48,6 +48,12 @@
   // University logo's column size (in in).
   univ_logo_column_size: "10",
 
+// QR Code's scale (in %).
+  qr_code_scale: "50",
+
+  // QR Code's column size (in in).
+  qr_code_column_size: "5",
+
   // Title and authors' column size (in in).
   title_column_size: "20",
 
@@ -72,10 +78,12 @@
   let width = int(sizes.at(0)) * 1in
   let height = int(sizes.at(1)) * 1in
   univ_logo_scale = int(univ_logo_scale) * 1%
+  qr_code_scale = int(qr_code_scale) * 1%
   title_font_size = int(title_font_size) * 1pt
   authors_font_size = int(authors_font_size) * 1pt
   num_columns = int(num_columns)
   univ_logo_column_size = int(univ_logo_column_size) * 1in
+  qr_code_column_size = int(qr_code_column_size) * 1in
   title_column_size = int(title_column_size) * 1in
   footer_url_font_size = int(footer_url_font_size) * 1pt
   footer_text_font_size = int(footer_text_font_size) * 1pt
@@ -160,16 +168,18 @@
   })
 
   // Arranging the logo, title, authors, and department in the header.
-  align(center,
+  align(center + horizon,
     grid(
       rows: 3,
-      columns: (univ_logo_column_size, title_column_size),
-      column-gutter: 0pt,
-      row-gutter: 25pt,
+      columns: (univ_logo_column_size, title_column_size, qr_code_column_size),
+      column-gutter: 30pt,
+      row-gutter: 0pt,
       image(univ_logo, width: univ_logo_scale),
       text(title_font_size, title + "\n\n") + 
       text(authors_font_size, emph(authors) + "\n") +
       text(departments),
+      image("./static/github_qr_code.png", width: qr_code_scale) + 
+      text("Scan me to read more about this project!")
     )
   )
 

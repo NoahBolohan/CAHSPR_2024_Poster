@@ -5,7 +5,7 @@ format:
     size: "42x42"
     poster-authors: Noah Bolohan (1), Deirdre Hennessy (1), Hawre Jalal (2)
     departments: 1 - Statistics Canada, 2 - University of Ottawa
-    institution-logo: "./static/sclogo.svg"
+    institution-logo: "./static/sclogo.png"
     footer-text: "CAHSPR 2024"
     footer-url: "https://cahspr.ca/events/cahspr-2024/"
     footer-emails: "noah.bolohan@statcan.gc.ca"
@@ -39,7 +39,7 @@ The model simulates opioid use and outcomes for a synthetic population represent
 
 These states describe the way in which a model agents uses opioids.
 ```{mermaid}
-%%| fig-width: 12
+%%| fig-width: 11
 %%| fig-align: center
 flowchart TD
     NoUse([No Use])
@@ -96,7 +96,7 @@ The implementation of the model will follow an open-science approach to research
 + Pre-packed datasets tailored for public use
 + Publically available on the Statistics Canada Github page
 
-::: {layout="[[20,50,20,-10]]"}
+::: {layout="[[-1,1,3,1,-2]]"}
 ![](./static/python_logo.png)
 
 ![](./static/plotly_logo.png)
@@ -146,11 +146,3 @@ I would like to acknowledge CAHSPR, Statistics Canada, Dr. Hawre Jalal, etc.
 ```
 
 This poster is made in Quarto, using a typst poster template made by Christophe Dervieux of Posit. The opioid use state diagram is made using the Mermaid Diagramming and charting tool.
-
-# For more information...
-
-Scan the following QR code to read more about this project.
-
-::: {layout="[[-35,30,-35]]"}
-![](./static/github_qr_code.png)
-:::
