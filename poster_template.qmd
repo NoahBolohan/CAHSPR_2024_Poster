@@ -74,8 +74,6 @@ flowchart RL
     A2 -.- A1
 ```
 
- The model focuses on stimulating counterfactual scenarios by allowing a number of policies and interventions to be applied to the simulated population and assessing their impact. A key feature of the model is the capability to produce outputs at a health region or public health unit level, enabling region-specific analysis for local health authorities.
-
  With our modelling approach, we aim to achieve the following:
 
  + Simulate counterfactual scenarios via policies and interventions
@@ -222,4 +220,4 @@ I would like to acknowledge CAHSPR, Statistics Canada, Dr. Hawre Jalal, etc.
 #v(30pt)
 ```
 
-This poster is made in Quarto, using a typst poster template made by Christophe Dervieux of Posit. The methods and opioid use state diagrams is made using the Mermaid Diagramming and charting tool.
+This poster is made in Quarto, using a typst poster template made by Christophe Dervieux of Posit. The methods and opioid use state diagrams are made using the Mermaid Diagramming and charting tool.
