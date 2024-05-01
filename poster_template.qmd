@@ -2,9 +2,9 @@
 title: Creating an open-source tool to model opioid overdoses and deaths
 format:
   poster-typst: 
-    size: "35x24"
+    size: "42x42"
     poster-authors: Noah Bolohan (1), Deirdre Hennessy (1), Hawre Jalal (2)
-    departments: (1) Statistics Canada, (2) University of Ottawa
+    departments: 1 - Statistics Canada, 2 - University of Ottawa
     institution-logo: "./static/sclogo.svg"
     footer-text: "CAHSPR 2024"
     footer-url: "https://cahspr.ca/events/cahspr-2024/"
@@ -23,14 +23,20 @@ Canada has seen an increasing number of opioid-related harms and deaths, with an
 
 We are developing a compartmental agent-based risk model which will leverage detailed socio-demographic and other data to simulate the frequency and locations of opioid use as well as fatality of overdoses. The model focuses on stimulating counterfactual scenarios by allowing a number of policies and interventions to be applied to the simulated population and assessing their impact. A key feature of the model is the capability to produce outputs at a health region or public health unit level, enabling region-specific analysis for local health authorities.
 
+```{=typst}
+#v(1700pt)
+```
+
 # The Model
 
 A synthetic population is generated using the socio-demographic profile of the specific geographic region. The model includes two compartmental layers for its agents, as well as a set of events that may occur.
 
-## Opioid Use State
+# Opioid Use State
 
 These states describe the way in which a model agents uses opioids.
 ```{mermaid}
+%%| fig-width: 12
+%%| fig-align: center
 flowchart TD
     NoUse([No Use])
     IllicitUse([Illicit Use])
@@ -50,9 +56,13 @@ flowchart TD
     OAT --> PrescriptionUse
 ```
 
-## Opioid Use Locations
+```{=typst}
+#box(height: 400pt,
+ columns(2)[
 
-These states include the location in which the agent is currently using opioids.
+= Locations
+
+These states include the location in which the agent is currently using opioids:
 
 + Housing status
 + Hospital
@@ -60,32 +70,38 @@ These states include the location in which the agent is currently using opioids.
 + Safe site
 + Other
 
+= Events
 
-## Events
-
-The flow of agents through the opioid use states and locations, as well as outcomes of opioid use, may be impacted by time-based events. These events can apply to a specific individual or the population as a whole.
+Certain events may impact on opioid-related outcomes, on a personal or global level:
 
 + Supply contamination
 + Injuries
 + Social assitance cheques
 + Overdoses
 + Compartment changes
+]
+)
+```
+
+```{=typst}
+#v(1000pt)
+```
 
 # What-If Decision Making
 
-A key feature of a modeling approach is the ability to study counter-factual ("what-if") scenarios via variable opioid interventions:
+A key feature of a modeling approach is the ability to simulate counter-factual ('what-if') scenarios. For example:
 
-+ What if we increased the availability of take-home naloxone kits in our community?
++ What if there are more take-home naloxone kits available in the community?
 + Do supervised safe consumption sites reduce the burden of opioid-related harms?
 
-Our model can be adapted to include a number of policies or interventions related to opioid use and outcomes, for example:
+Our model can be adapted to include a number of policies or interventions related to opioid use and outcomes in order to explore different scenarios and their impact on the community. The model includes the following:
 
 :::{.callout-note title="Take-home naloxone kit availability"}
 
-Determines the number of naloxone kits available to take home at each moment in time. The probability of a model agent receiving a kit in the event of an opioid overdose depends on the total number of agents as well as the number of remaining available kits. If a naloxone kit is available, the fatality rate of an overdose may be altered.
+Determines the number of naloxone kits available to take home at each moment in time.
 :::
 
-:::{.callout-note title="Opioid prescription alteration""}
+:::{.callout-note title="Opioid prescription alteration"}
 
 Affects the rate at which opioid prescriptions are administered
 :::
@@ -102,4 +118,8 @@ This intervention represents a broad class of interventions which may occur when
 
 # Conclusion
 
-With the help of collaborations with local health authorities and subject matter experts, we have begun development of a tool that can support policy makers and researches intersted in investigating opioid-related harms, while simultaneously being openly available and easy to use. A focus on sub-provincial geographies and model adaptability will further ensure that the model remains useful in a variety of scenarios.
+We are developping a tool that can support policy makers and researchers intersted in opioid-related outcomes, while being openly available and easy to use. A focus on sub-provincial geographies and model adaptability will further ensure that the model remains useful in a variety of scenarios.
+
+# Acknowledgements
+
+I would like to acknowledge blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah.
