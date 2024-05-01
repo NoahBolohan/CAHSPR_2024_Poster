@@ -29,6 +29,9 @@
   // Color of the footer.
   footer_color: "Hex Color Code",
 
+  // Color of the footer text.
+  footer_text_color: "Hex Color Code",
+
   // DEFAULTS
   // ========
   // For 3-column posters, these are generally good defaults.
@@ -104,11 +107,11 @@
         inset: 20pt,
         radius: 10pt,
         [
-          #text(font: "Courier", size: footer_url_font_size, footer_url) 
+          #text(font: "Courier", size: footer_url_font_size, footer_url, fill: rgb(footer_text_color)) 
           #h(1fr) 
-          #text(size: footer_text_font_size, smallcaps(footer_text)) 
+          #text(size: footer_text_font_size, smallcaps(footer_text), fill: rgb(footer_text_color)) 
           #h(1fr) 
-          #text(font: "Courier", size: footer_url_font_size, footer_email_ids)
+          #text(font: "Courier", size: footer_url_font_size, footer_email_ids, fill: rgb(footer_text_color))
         ]
       )
     ]
@@ -139,7 +142,7 @@
       #set align(center)
       #set text({ 32pt })
       #show: smallcaps
-      #v(50pt, weak: true)
+      #v(100pt, weak: true)
       #if it.numbering != none {
         numbering("I.", deepest)
         h(7pt, weak: true)
@@ -147,6 +150,7 @@
       #it.body
       #v(35.75pt, weak: true)
       #line(length: 100%)
+      #v(35.75pt, weak: true)
     ] else if it.level == 2 [
       // Second-level headings are run-ins.
       #set text(style: "italic")

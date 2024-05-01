@@ -9,7 +9,8 @@ format:
     footer-text: "CAHSPR 2024"
     footer-url: "https://cahspr.ca/events/cahspr-2024/"
     footer-emails: "noah.bolohan@statcan.gc.ca"
-    footer-color: "ebcfb2"
+    footer-color: "243850"
+    footer-text-color: "f1fff4"
     keywords: [""]
 ---
 
@@ -23,13 +24,30 @@ Canada has seen an increasing number of opioid-related harms and deaths, with an
 
 We are developing a compartmental agent-based risk model which will leverage detailed socio-demographic and other data to simulate the frequency and locations of opioid use as well as fatality of overdoses. The model focuses on stimulating counterfactual scenarios by allowing a number of policies and interventions to be applied to the simulated population and assessing their impact. A key feature of the model is the capability to produce outputs at a health region or public health unit level, enabling region-specific analysis for local health authorities.
 
+# Implementation
+
+The implementation of the model will follow an open-science approach to research and dissemination:
+
++ Written completely in the Python
++ Accompanied by Dash/Plotly user interface
++ Pre-packed datasets tailored for public use
++ Publically available on the Statistics Canada Github page
+
+::: {layout="[[-1,1,3,1,-2]]"}
+![](./static/python_logo.png)
+
+![](./static/plotly_logo.png)
+
+![](./static/github_logo.png)
+:::
+
 ```{=typst}
 #v(1700pt)
 ```
 
 # The Model
 
-The model simulates opioid use and outcomes for a synthetic population representative of a public health unit:
+The model simulates opioid use and outcomes over a number of days, weeks or months for a synthetic population representative of a public health unit. The synthetic population is derived from the following:
 
 + Statistics Canada internal data + local population characteristics
 + Population profile is represented as a set of probability distributions
@@ -37,7 +55,13 @@ The model simulates opioid use and outcomes for a synthetic population represent
 
 # Opioid Use State
 
-These states describe the way in which a model agents uses opioids.
+These states compartmentalize the ways in which a model individual may use opioids. Directed arrows represent possible transitions between use states, with transition rates dependant on any of the following:
+
++ An individual's personal characteristics
++ Location of opioid use
++ Events that have occured for the individual or in the world
++ Interventions or policies that have been applied to the simulation
++ Transition multipliers specific to the health care system of the public health unit
 ```{mermaid}
 %%| fig-width: 11
 %%| fig-align: center
@@ -86,23 +110,6 @@ Certain events may impact on opioid-related outcomes, on a personal or global le
 ]
 )
 ```
-
-# Implementation
-
-The implementation of the model will follow an open-science approach to research and dissemination:
-
-+ Written completely in the Python
-+ Accompanied by Dash/Plotly user interface
-+ Pre-packed datasets tailored for public use
-+ Publically available on the Statistics Canada Github page
-
-::: {layout="[[-1,1,3,1,-2]]"}
-![](./static/python_logo.png)
-
-![](./static/plotly_logo.png)
-
-![](./static/github_logo.png)
-:::
 
 # What-If Decision Making
 
