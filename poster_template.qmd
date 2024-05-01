@@ -29,7 +29,11 @@ We are developing a compartmental agent-based risk model which will leverage det
 
 # The Model
 
-A synthetic population is generated using the socio-demographic profile of the specific geographic region. The model includes two compartmental layers for its agents, as well as a set of events that may occur.
+The model simulates opioid use and outcomes for a synthetic population representative of a public health unit:
+
++ Statistics Canada internal data + local population characteristics
++ Population profile is represented as a set of probability distributions
++ Large number of indidividual characteristics, e.g.,  socio-demographic, socio-economic, geographic, health conditions
 
 # Opioid Use State
 
@@ -83,9 +87,22 @@ Certain events may impact on opioid-related outcomes, on a personal or global le
 )
 ```
 
-```{=typst}
-#v(1000pt)
-```
+# Implementation
+
+The implementation of the model will follow an open-science approach to research and dissemination:
+
++ Written completely in the Python
++ Accompanied by Dash/Plotly user interface
++ Pre-packed datasets tailored for public use
++ Publically available on the Statistics Canada Github page
+
+::: {layout="[[20,50,20,-10]]"}
+![](./static/python_logo.png)
+
+![](./static/plotly_logo.png)
+
+![](./static/github_logo.png)
+:::
 
 # What-If Decision Making
 
@@ -122,4 +139,10 @@ We are developping a tool that can support policy makers and researchers interst
 
 # Acknowledgements
 
-I would like to acknowledge blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah.
+I would like to acknowledge CAHSPR, Statistics Canada, Dr. Hawre Jalal, etc.
+
+```{=typst}
+#v(30pt)
+```
+
+This poster is made in Quarto, using a typst poster template made by Christophe Dervieux of Posit. The opioid use state diagram is made using the Mermaid Diagramming and charting tool.
