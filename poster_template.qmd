@@ -146,3 +146,11 @@ I would like to acknowledge CAHSPR, Statistics Canada, Dr. Hawre Jalal, etc.
 ```
 
 This poster is made in Quarto, using a typst poster template made by Christophe Dervieux of Posit. The opioid use state diagram is made using the Mermaid Diagramming and charting tool.
+
+# For more information...
+
+Scan the following QR code to read more about this project.
+
+::: {layout="[[-35,30,-35]]"}
+![](./static/github_qr_code.png)
+:::
