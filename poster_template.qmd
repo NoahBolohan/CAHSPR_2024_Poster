@@ -14,7 +14,7 @@ format:
     keywords: [""]
 ---
 
-# Background
+# Background & Motivation
 
 Canada has seen an increasing number of opioid-related harms and deaths between January 2016 and June 2023, with an estimated:
 
@@ -23,15 +23,18 @@ Canada has seen an increasing number of opioid-related harms and deaths between 
 
 ![Opioid- and Stimulant-related Harms in Canada[^1]](./static/opioid_stimulants_dashboard.png)
 
-We are developing an open-source modelling tool aimed to provide insight into the opioid epidemic at multiple levels of health administration across Canada. In particular, the model will be directed towards analyzing the impact of policies and intervantions at the public health unit level.
+This work is motivated primarily by two facts:
+
++ Previously, Statistics Canada and the Public Health Agency of Canada have been involved in modelling outcomes only at the national or provincial level
++ COVID-19 and the opioid crisis have demonstraded a necessity for policy-making and prevention efforts in smaller geogrpahic areas, as well as shedding light on the gap in modeling capacity and knowledge within the Federal Government
+
+We are developing an open-source modelling tool aimed towards analyzing the impact of opioid use policies and interventions at the public health unit level in Canada.
 
 [^1]: Federal, provincial, and territorial Special Advisory Committee on the Epidemic of Opioid Overdoses. Opioid- and Stimulant-related Harms in Canada. Ottawa: Public Health Agency of Canada; March 2024. https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/
 
 # Methods
 
-We are developing a compartmental agent-based risk model which will leverage detailed socio-demographic and other data to simulate the frequency and locations of opioid use as well as fatality of overdoses.
-
- With our modelling approach, we aim to achieve the following:
+We are developing a compartmental agent-based risk model which will simulate the frequency and outcomes of opioid use in a synthetic population. With this approach, we aim to achieve the following:
 
  + Simulate counterfactual scenarios via policies and interventions
  + Asses impacts of these scenarios on a synthetic population
@@ -82,9 +85,6 @@ flowchart RL
     A2 -.- A1
 ```
 
-```{=typst}
-#v(300pt)
-```
 # The Model
 
 The model simulates opioid use and outcomes over a number of days, weeks or months for a synthetic population representative of a public health unit. The synthetic population is derived from the following:
