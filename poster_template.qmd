@@ -4,7 +4,7 @@ format:
   poster-typst: 
     size: "42x42"
     poster-authors: Noah Bolohan (1), Deirdre Hennessy (1), Hawre Jalal (2)
-    departments: 1 - Statistics Canada, 2 - University of Ottawa
+    departments: 1 - Health Analysis Division, Statistics Canada, 2 - University of Ottawa
     institution-logo: "./static/sclogo.png"
     footer-text: "CAHSPR 2024"
     footer-url: "https://cahspr.ca/events/cahspr-2024/"
@@ -23,10 +23,10 @@ Canada has seen an increasing number of opioid-related harms and deaths between 
 
 ![Opioid- and Stimulant-related Harms in Canada[^1]](./static/opioid_stimulants_dashboard.png)
 
-This work is motivated primarily by two facts:
+This work is motivated by the following:
 
-+ Previously, Statistics Canada and the Public Health Agency of Canada have been involved in modelling outcomes only at the national or provincial level
-+ COVID-19 and the opioid crisis have demonstraded a necessity for policy-making and prevention efforts in smaller geogrpahic areas, as well as shedding light on the gap in modeling capacity and knowledge within the Federal Government
++ Previously, Statistics Canada have been involved in modelling health outcomes only at the national or provincial level
++ COVID-19 and the opioid crisis have demonstrated a necessity for policy-making and prevention efforts in smaller geogrpahic areas, as well as shed light on the gap in modeling capacity and knowledge within the Federal Government
 
 We are developing an open-source modelling tool aimed towards analyzing the impact of opioid use policies and interventions at the public health unit level in Canada.
 
@@ -36,11 +36,11 @@ We are developing an open-source modelling tool aimed towards analyzing the impa
 
 We are developing a compartmental agent-based risk model which will simulate the frequency and outcomes of opioid use in a synthetic population. With this approach, we aim to achieve the following:
 
- + Simulate counterfactual scenarios via policies and interventions
+ + Simulate counterfactual scenarios of policies and interventions
  + Asses impacts of these scenarios on a synthetic population
  + Produce outputs at lower-level geographies, e.g., the public health unit
  + Support policy makers and reaserchers with an easy-to-use tool
- + Adapt an open-science approach (publically available and free to use)
+ + Adapt an open-science approach, e.g., make the tool publically available and free to use
 
 ```{mermaid}
 %%| fig-width: 12
@@ -65,8 +65,8 @@ flowchart RL
     subgraph A1["Compartmental"]
     direction LR
         B1([Discretize different \n aspects of opioid use])
-        C1([Easily control transitions \n between compartments])
-        D1([Can intervene on specific \ncompartments])
+        C1([Determine transitions \n between compartments])
+        D1([Create interventions on specific \ncompartments])
     end
     
     subgraph A2["agent-based"]
@@ -77,7 +77,7 @@ flowchart RL
 
     subgraph A3["risk model"]
         direction LR
-        B3([Handles large number \n of parameters])
+        B3([Handles parameters])
         C3([Adaptable to different \n types of individuals])
     end
 
@@ -89,9 +89,9 @@ flowchart RL
 
 The model simulates opioid use and outcomes over a number of days, weeks or months for a synthetic population representative of a public health unit. The synthetic population is derived from the following:
 
-+ Statistics Canada internal data + local population characteristics
++ Statistics Canada data, including local population characteristics
 + Population profile is represented as a set of probability distributions
-+ Large number of indidividual characteristics, e.g.,  socio-demographic, socio-economic, geographic, health conditions
++ Indidividual characteristics, e.g.,  socio-demographic, socio-economic, geographic, and health conditions
 
 # Opioid Use State
 
@@ -159,19 +159,18 @@ Certain events may have an impact on opioid-related outcomes, on a personal or g
 
 + Supply contamination
 + Injuries
-+ Social assitance cheques
++ Social assistance cheques
 + Overdoses
-+ Compartment changes
 ]
 )
 ```
 
-# What-If Decision Making
+# Scenario Development
 
 A key feature of a modeling approach is the ability to simulate counter-factual ('what-if') scenarios. For example:
 
 + What if there are more take-home naloxone kits available in the community?
-+ Do supervised safe consumption sites reduce the burden of opioid-related harms?
++ What if there was an increased number of supervised safe consumption sites?
 
 Our model can be adapted to include a number of policies or interventions related to opioid use and outcomes in order to explore different scenarios and their impact on the community. The model includes the following:
 
@@ -192,17 +191,16 @@ Affects the rate at which Opioid Agonist Therapy (OAT) is prescribed.
 
 :::{.callout-note title="Point-of-contact interventions"}
 
-This intervention represents a broad class of interventions which may occur when an opioid-using actor comes into contact with some form of system. For example, visits to the hospital, emergency room/department, prison, or supervised safe consumption sites.
+This intervention represents a broad class of interventions which may occur when an opioid-using actor comes into contact with the public health system. For example, visits to the hospital, emergency room/department, prison, or supervised safe consumption sites.
 :::
 
 # Implementation
 
-The implementation of the model will follow an open-science approach to research and dissemination:
+The implementation of the model will follow an open-science approach for research and dissemination:
 
-+ Written completely in the Python
++ Written completely in Python
 + Accompanied by Dash/Plotly user interface
-+ Pre-packed datasets tailored for public use
-+ Publically available on the Statistics Canada Github page
++ Pre-packeged datasets tailored for public use
 
 ::: {layout="[[-1,1,3,1,-2]]"}
 ![](./static/python_logo.png)
