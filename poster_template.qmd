@@ -23,12 +23,11 @@ Canada has seen an increasing number of opioid-related harms and deaths between 
 
 ![Opioid- and Stimulant-related Harms in Canada[^1]](./static/opioid_stimulants_dashboard.png)
 
-This work is motivated by the following:
++ COVID-19 and the opioid crisis have demonstrated the importance and impact of local policies and prevention efforts on health outcomes
++ There is an existing gap in terms of regionally-specific, timely information related to opioid use and events. These are needed to help policy-makers and health care providers to plan
++ Statistics Canada and other federal government agencies have experiences modelling health outcomes, but generally only at the national or provincial level
 
-+ Previously, Statistics Canada have been involved in modelling health outcomes only at the national or provincial level
-+ COVID-19 and the opioid crisis have demonstrated a necessity for policy-making and prevention efforts in smaller geogrpahic areas, as well as shed light on the gap in modeling capacity and knowledge within the Federal Government
-
-We are developing an open-source modelling tool aimed towards analyzing the impact of opioid use policies and interventions at the public health unit level in Canada.
+We are developing an open-source modelling tool aimed towards projecting the impact of opioid use policies and interventions at the public health unit level in Canada.
 
 [^1]: Federal, provincial, and territorial Special Advisory Committee on the Epidemic of Opioid Overdoses. Opioid- and Stimulant-related Harms in Canada. Ottawa: Public Health Agency of Canada; March 2024. https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/
 
@@ -39,7 +38,7 @@ We are developing a compartmental agent-based risk model which will simulate the
  + Simulate counterfactual scenarios of policies and interventions
  + Asses impacts of these scenarios on a synthetic population
  + Produce outputs at lower-level geographies, e.g., the public health unit
- + Support policy makers and reaserchers with an easy-to-use tool
+ + Support policy makers and researchers with an easy-to-use tool
  + Adapt an open-science approach, e.g., make the tool publically available and free to use
 
 ```{mermaid}
@@ -200,7 +199,7 @@ The implementation of the model will follow an open-science approach for researc
 
 + Written completely in Python
 + Accompanied by Dash/Plotly user interface
-+ Pre-packeged datasets tailored for public use
++ Pre-packaged datasets tailored for public use
 
 ::: {layout="[[-1,1,3,1,-2]]"}
 ![](./static/python_logo.png)
