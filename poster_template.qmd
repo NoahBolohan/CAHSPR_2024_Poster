@@ -3,7 +3,7 @@ title: Creating an open-source tool to model opioid overdoses and deaths
 format:
   poster-typst: 
     size: "42x42"
-    poster-authors: Noah Bolohan (1), Deirdre Hennessy (1), Hawre Jalal (2)
+    poster-authors: Noah Bolohan (1), Dr. Deirdre Hennessy (1), Dr. Hawre Jalal (2)
     departments: 1 - Health Analysis Division, Statistics Canada, 2 - University of Ottawa
     institution-logo: "./static/sclogo.png"
     footer-text: "CAHSPR 2024"
@@ -212,7 +212,7 @@ The implementation of the model will follow an open-science approach for researc
 
 # Acknowledgements
 
-I would like to acknowledge CAHSPR, Statistics Canada, Dr. Hawre Jalal, etc.
+I would like to acknowledge CAHSPR for granting me the opportunity to share this project, as well as Statistics Canada and Dr. Hawre Jalal for supporting this work as well as sharing invaluable insight and guidance.
 
 ```{=typst}
 #v(30pt)
