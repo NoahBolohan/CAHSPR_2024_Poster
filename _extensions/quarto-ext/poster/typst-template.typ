@@ -182,7 +182,7 @@
       text(title_font_size, title + "\n\n") + 
       text(authors_font_size, emph(authors) + "\n") +
       text(departments),
-      image("./static/github_qr_code.png", width: qr_code_scale) + 
+      image("./static/qr.png", width: qr_code_scale) + 
       text("Scan me to read more about this project!")
     )
   )
