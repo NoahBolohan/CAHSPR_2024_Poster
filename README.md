@@ -4,4 +4,4 @@ A poster titled "Creating an open-source tool to model opioid overdoses and deat
 
 Supplementary information on this project can be found on [an accompanying website](https://nbolohan.github.io/CAHSPR_2024_Website/). The source code for this website can be found [here](https://github.com/nbolohan/CAHSPR_2024_Website).
 
-![](poster.pdf)
+![](static/poster.png)
